@@ -16,7 +16,7 @@ function Main(){
         <Header/>
         <Switch>
         <Route path='/pokemons' component={Pokemons}/>
-        <Route path='/detail' component={PokemonDetail}/>
+        <Route path='/detail/:name' component={PokemonDetail}/>
         <Route path='/mypokemon' component={MyPokemon}/>
         <Redirect to='/pokemons'/>
         </Switch>

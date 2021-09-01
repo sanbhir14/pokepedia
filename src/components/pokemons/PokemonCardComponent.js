@@ -1,26 +1,32 @@
 import React from 'react';
 import {PokemonCardWrap} from './PokemonCardStyles';
-import pikachu from '../../assets/pikachu.png'
+import {Link} from 'react-router-dom';
 
-function PokemonCard(){
+function PokemonCard(props){
+    var url = "/detail/" + props.name;
+    var image = props.image
+    var total = props.total
     return(
         <PokemonCardWrap>
             <div className="card">
 				<div className="name">
-					<h2>PIKACHU</h2>
+					<h2>{props.name}</h2>
 				</div>
 				<div className="image">
-					<img src={pikachu} />
+					<img src={props.image} />
 				</div>
 				<div className="stats">
-					5 Owned
+					{props.owned} Owned
 				</div>
 				<div className="about">
 					<div className="id">
-						<h3>1/153</h3>
+						<h3>{props.id}/{props.total}</h3>
 					</div>
 					<div className="abilities">
-						<p>Detail</p>
+                        <Link to={{pathname:url, pokeProps:{
+                            image:image,
+                            total:total
+                        }}}>Detail</Link>
 					</div>
 				</div>
 			</div>

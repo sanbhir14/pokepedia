@@ -34,6 +34,9 @@ export const PokemonDetailWrap = styled.div`
                 font-size: 28px;
             }
         }
+        .pokemon-name{
+            text-transform: capitalize;
+        }
 
     }
     .page-container{
