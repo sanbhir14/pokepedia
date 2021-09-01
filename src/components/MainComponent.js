@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './header/HeaderComponent';
 import Footer from './footer/FooterComponent';
+import {MainWrap} from './MainStyles';
 
 import Pokemons from './pokemons/PokemonsComponent';
 import PokemonDetail from './detail/PokemonDetailComponent';
@@ -13,7 +14,6 @@ function Main(){
         <React.Fragment>
         
         <Header/>
-
         <Switch>
         <Route path='/pokemons' component={Pokemons}/>
         <Route path='/detail' component={PokemonDetail}/>
@@ -21,8 +21,7 @@ function Main(){
         <Redirect to='/pokemons'/>
         </Switch>
 
-        <Footer/>
-
+        
         </React.Fragment> 
     )
 }
