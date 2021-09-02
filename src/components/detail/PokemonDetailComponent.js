@@ -68,12 +68,14 @@ function PokemonDetail(props){
     }, [])
     const handleSubmit = () => {
         var arr = JSON.parse(localStorage.getItem('my_pokemon'))
-        const checkNick = list.filter((item) => item.nickname !== value.nickname)
+        const checkNick = list.filter((item) => item.nickname === value.nickname)
+        console.log(checkNick)
         if(value.nickname === ''){
             alert('Please insert your pokemon nickname!')
             
         }
-        if(checkNick !== []){
+        if(checkNick.length !== 0){
+
             alert('nickname already in use')
         }
         else{
@@ -132,23 +134,13 @@ function PokemonDetail(props){
             <section className="detail-header">
             <div className="pagination">
                 <p className="previous">
-                <div className="pagination-wrapper">
-                    <span className="arrow"></span>
-                    <span className="pokemon-number"> #{data.pokemon.id}</span>
-                    <span className="pokemon-name"> {data.pokemon.name}</span>
-                    <span className="arrow"></span>
-                </div>
+                
                 </p>
             </div>
             </section>
             <section className="page-container">
-                <PokemonCard owned="-" image={props.location.pokeProps.image} total={props.location.pokeProps.total} id={data.pokemon.id}/>
+                <PokemonCard name={data.pokemon.name} myPokemon="detail" image={props.location.pokeProps.image} total={props.location.pokeProps.total} id={data.pokemon.id} types={data.pokemon.types}/>
                 <div className="description">
-                        {data.pokemon.types.map((el,index)=> (
-                            <div className="types">
-                                {el.type.name}
-                            </div>
-                        ))}
                     <div className="moves">
                         <h2>Moves:</h2>
                         <div className="move-section">
@@ -162,9 +154,6 @@ function PokemonDetail(props){
                     </div>
                     <div className="catch">
                         <button className="catch-btn" onClick={handleCatch}>CATCH!!</button>
-                    </div>
-                    <div className="catch">
-                        <button className="explore-btn">Explore More</button>
                     </div>
                 </div>
             </section>

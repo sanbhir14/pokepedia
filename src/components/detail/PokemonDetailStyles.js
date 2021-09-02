@@ -73,7 +73,14 @@ export const PokemonDetailWrap = styled.div`
             align-items:flex-start;
             
             h2{
-                align-self: center
+                place-self:center;
+                font-size: 18px;
+                margin-top: 10px;
+                margin-bottom: 26px;
+                ${media.ltablet_laptop}{
+                    margin-top: 18px;
+                    margin-bottom: 26px;
+                }
                 
             }
             .move-section{
@@ -99,6 +106,9 @@ export const PokemonDetailWrap = styled.div`
                     h4{
                         border: 2px solid #E54545;
                         border-radius: 10px; 
+                        font-size: 12px;
+                        width: 103%;
+                        height: 88%;
                     }
                 }
             }
@@ -109,6 +119,19 @@ export const PokemonDetailWrap = styled.div`
             text-align:center;
         }
         
+    }
+    .catch-btn{
+        border-color: #e74c3c;
+        border-radius: 24px;
+        color: black;
+        box-shadow: 0 0 40px 40px #e74c3c inset, 0 0 0 0 #e74c3c;
+        transition: all 150ms ease-in-out;
+        font-weight:bold;
+        width: 22%;
+        font-size: 12px;
+        &:hover {
+          box-shadow: 0 0 10px 0 #e74c3c inset, 0 0 10px 4px #e74c3c;
+        }
     }
     
     

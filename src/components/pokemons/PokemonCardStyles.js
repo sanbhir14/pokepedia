@@ -73,7 +73,6 @@ export const PokemonCardWrap = styled.div`
         justify-content: center;
         height: 20px;
         width: 80%;
-        padding: 5px 0;
         margin: 2px 0 15px 0;
         background-color: #EDC351;
         border-radius: 3px;
@@ -93,16 +92,48 @@ export const PokemonCardWrap = styled.div`
             font-size: 13px;
             p {
                 margin: 5px;
+            }
+            h3{
+                font-size: 16px;
             }			
         }
 
         .abilities {
             padding-right: 10px;
+            margin-top: -6px;
 
             p {
                 margin: 0;
             }
+            
         }
+    }
+    .detail-btn{
+        border-color: #e74c3c;
+        color: black;
+        box-shadow: 0 0 40px 40px #e74c3c inset, 0 0 0 0 #e74c3c;
+        transition: all 150ms ease-in-out;
+        font-weight:bold;
+        width: 100%;
+        font-size: 12px;
+        &:hover {
+          box-shadow: 0 0 10px 0 #e74c3c inset, 0 0 10px 4px #e74c3c;
+        }
+    }
+    .types{
+        margin-top: 2px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 10px;
+        text-align: center;
+        width: 124px;
+        margin-left: -14px;
+
+        ${media.small_tablets}{
+            width: 124px;
+            margin-left: -14px;
+        }
+        
     }
 }
 

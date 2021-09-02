@@ -3,33 +3,26 @@ import { PokemonsWrap } from '../pokemons/PokemonsStyles';
 import PokemonCard from '../pokemons/PokemonCardComponent';
 
 function MyPokemon(){
-    let myPokeList = JSON.parse(localStorage.getItem('my_pokemon'))
-    const [list, setList] = useState([])
-    const handleDelete = (id) => {
-        const newPokeList = list.filter((item) => item.id !== id);
-        setList(newPokeList);
-        localStorage.setItem('my_pokemon', JSON.stringify(newPokeList))
-    }
+    const [pokeList, setPokeList] = useState(JSON.parse(localStorage.getItem('my_pokemon')))
     const getLocal = () => {
         if(localStorage.getItem('my_pokemon') === null){
             localStorage.setItem('my_pokemon', JSON.stringify([]))
         }
-        let pokeLocal = JSON.parse(localStorage.getItem('my_pokemon'))
-        setList(pokeLocal)
+        JSON.parse(localStorage.getItem('my_pokemon'))
+        setPokeList(JSON.parse(localStorage.getItem('my_pokemon')))
     }
     useEffect(() => {
         getLocal()
     }, [])
-    console.log(list)
+    
     return(
         <PokemonsWrap>
-        <h1>Pokemon List</h1>
+        <h1>My Pokemon List</h1>
         <div className="page-container">
                 <div className="card-container">        
-                        {list.map((pokemon,index)=>  (
+                        {pokeList.map((pokemon,index)=>  (
                             <React.Fragment key={index}>
-                            <h6>{pokemon.nickname}</h6>
-                            <PokemonCard name={pokemon.name} image={pokemon.image} owned="-" id={pokemon.id} total={pokemon.nickname}/>
+                            <PokemonCard name={pokemon.poke_name} image={pokemon.image} id={pokemon.id} nickname={pokemon.nickname} myPokemon="myPokemon" setPokeList={setPokeList}/>
                             
                             {/* {data.pokemons.next !== null && index == data.pokemons.results.length && (
                             

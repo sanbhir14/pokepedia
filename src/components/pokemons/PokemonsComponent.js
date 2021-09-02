@@ -60,7 +60,7 @@ function Pokemons(){
                 <div className="card-container">        
                         {data.pokemons.results.map((pokemon,index)=>  (
                             <React.Fragment key={index}>
-                            <PokemonCard name={pokemon.name} image={pokemon.image} owned="-" id={index+1} total={data.pokemons.count}/>
+                            <PokemonCard name={pokemon.name} image={pokemon.image} id={index+1} total={data.pokemons.count} myPokemon="pokemons"/>
                             
                             {/* {data.pokemons.next !== null && index == data.pokemons.results.length && (
                             
