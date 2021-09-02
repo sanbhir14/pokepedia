@@ -1,12 +1,8 @@
 import React,{useState, useEffect} from 'react'
-import {Link, useParams} from 'react-router-dom' 
+import {useParams} from 'react-router-dom' 
 import {PokemonDetailWrap} from './PokemonDetailStyles'
-import pikachu from '../../assets/pikachu.png'
 import PokemonCard from '../pokemons/PokemonCardComponent'
 import {
-    ApolloClient,
-    InMemoryCache,
-    ApolloProvider,
     useQuery,
     gql
   } from "@apollo/client";

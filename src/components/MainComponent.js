@@ -1,7 +1,5 @@
 import React from 'react'
 import Header from './header/HeaderComponent';
-import Footer from './footer/FooterComponent';
-import {MainWrap} from './MainStyles';
 
 import Pokemons from './pokemons/PokemonsComponent';
 import PokemonDetail from './detail/PokemonDetailComponent';
