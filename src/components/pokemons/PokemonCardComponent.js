@@ -66,11 +66,11 @@ function PokemonCard(props){
 		}
     }
 	const handleRemove=()=>{
-		const newPokeList = list.filter((item) => item.nickname !== props.nickname);
-        setList(newPokeList);
+		const newPokeList = list.filter((item) => item.nickname.toLowerCase() !== props.nickname.toLowerCase());
+		setList(newPokeList);
         localStorage.setItem('my_pokemon', JSON.stringify(newPokeList))
 		setShow(false);
-		setPokeList(JSON.parse(localStorage.getItem('my_pokemon')))
+		setPokeList(newPokeList)
 	}
 	const getLocal = () => {
         if(localStorage.getItem('my_pokemon') === null){
@@ -81,7 +81,6 @@ function PokemonCard(props){
 		let owning = pokeLocal.filter((item) => item.id === props.id)
 		setTotalOwn(owning.length)
     }
-	console.log(props.types)
 	
 
     useEffect(() => {

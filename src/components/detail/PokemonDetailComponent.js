@@ -64,8 +64,7 @@ function PokemonDetail(props){
     }, [])
     const handleSubmit = () => {
         var arr = JSON.parse(localStorage.getItem('my_pokemon'))
-        const checkNick = list.filter((item) => item.nickname === value.nickname)
-        console.log(checkNick)
+        const checkNick = list.filter((item) => item.nickname.toLowerCase() === value.nickname.toLowerCase())
         if(value.nickname === ''){
             alert('Please insert your pokemon nickname!')
             
