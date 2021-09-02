@@ -55,12 +55,16 @@ export const PokemonDetailWrap = styled.div`
             border-radius: 10px;
             background-color: #E54545;
             text-align: center;
-            width: 34%;
-            margin-left: 106px;
+            width: 29%;
+            height: 25px;
+            margin-left: 148px;
 
             ${media.small_tablets}{
-                margin-left: 137px;
+                width: 20%;
+                height: 26px;
+                margin-left: 266px;
             }
+            
         }
         .moves{
             display:flex;
@@ -106,5 +110,6 @@ export const PokemonDetailWrap = styled.div`
         }
         
     }
+    
     
 `

@@ -44,7 +44,12 @@ export const PokemonCardWrap = styled.div`
         font-size: 13px;
 
         h2 {
-            margin-left: 15px;
+            margin-left: 11px;
+            font-size: 17px;
+            text-transform: capitalize;
+            ${media.ltablet_laptop}{
+                font-size: 22px;
+            }
         }
 
         p {

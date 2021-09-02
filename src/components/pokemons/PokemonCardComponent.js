@@ -2,6 +2,7 @@ import React from 'react';
 import {PokemonCardWrap} from './PokemonCardStyles';
 import {Link} from 'react-router-dom';
 
+
 function PokemonCard(props){
     var url = "/detail/" + props.name;
     var image = props.image
