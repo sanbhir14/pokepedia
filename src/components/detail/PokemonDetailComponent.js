@@ -42,14 +42,14 @@ function PokemonDetail(props){
                 setLoadingPage(false)
                 setCatchPoke(true)
 
-            }, 2000);
+            }, 5);
         }
         else{
             setLoadingPage(true)
             setTimeout(function() {
                 setLoadingPage(false)
                 setCatchPoke(false)
-            }, 2000);
+            }, 5);
         }
         setShow(true)
     }
