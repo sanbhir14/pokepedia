@@ -12,6 +12,13 @@ export const PokemonsWrap = styled.div`
     h1{
         text-align: center;
     }
+    .no-poke-alert{
+        text-align: center;
+    }
+    .title{
+        margin-top: 18px;
+        margin-bottom: 21px;
+    }
     .page-container {
         display: flex;
         flex-direction: row;

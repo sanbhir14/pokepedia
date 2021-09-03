@@ -35,7 +35,7 @@ export const HeaderWrap = styled.div`
     }
       
     .logo {
-        color: #5FC0DC;
+        color: #E54545;
         text-transform: uppercase;
         text-decoration: none;
         font-size: 36px;
@@ -43,7 +43,7 @@ export const HeaderWrap = styled.div`
     }
       
     .toggler {
-        color: #5FC0DC;
+        color: #E54545;
         cursor: pointer;
         position: absolute;
         top: 5px;
@@ -70,11 +70,11 @@ export const HeaderWrap = styled.div`
     }
       
     nav ul li a:hover {
-        color: #5FC0DC;
+        color: #E54545;
     }
       
     .active {
-        color: #5FC0DC;
+        color: #E54545;
     }
       
     .side-nav {
@@ -83,7 +83,7 @@ export const HeaderWrap = styled.div`
       
     .side-nav a {
         text-decoration: none;
-        color: #5FC0DC;
+        color: #E54545;
         padding-right: 15px;
         line-height: 40px;
     }
@@ -105,7 +105,7 @@ export const HeaderWrap = styled.div`
     #info {
         padding-top: 200px;
         text-align: center;
-        color: #5FC0DC;
+        color: #E54545;
     }
       
     @media screen and (min-width: 872px) {

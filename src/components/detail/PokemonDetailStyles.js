@@ -117,21 +117,18 @@ export const PokemonDetailWrap = styled.div`
         .catch{
             margin-top:37px;
             text-align:center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
     }
-    .catch-btn{
-        border-color: #e74c3c;
-        border-radius: 24px;
-        color: black;
-        box-shadow: 0 0 40px 40px #e74c3c inset, 0 0 0 0 #e74c3c;
-        transition: all 150ms ease-in-out;
-        font-weight:bold;
-        width: 22%;
-        font-size: 12px;
-        &:hover {
-          box-shadow: 0 0 10px 0 #e74c3c inset, 0 0 10px 4px #e74c3c;
-        }
+    .catchbtn{
+        width: 27%;
+        margin-bottom: 15px;
+    }
+    .findbtn{
+        width: 36%;
     }
     
     

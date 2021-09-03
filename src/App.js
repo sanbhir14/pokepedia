@@ -6,6 +6,7 @@ import {AppWrap} from './AppStyles';
 
 function App() {
   return (
+    
     <AppWrap>
     <div className="App">
       <BrowserRouter>
