@@ -6,8 +6,9 @@ import {
     useQuery,
     gql
   } from "@apollo/client";
-import { Modal,Button, InputGroup, FormControl } from 'react-bootstrap';
+import { Modal,Button, InputGroup, FormControl,Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useHistory} from 'react-router-dom';
 
 function PokemonDetail(props){
     let {name} = useParams();
@@ -122,7 +123,17 @@ function PokemonDetail(props){
             namePoke: name
           }
     });
-    if (loading) return <p>Loading...</p>;
+    const history = useHistory()
+    const handleFind = () =>{
+		history.push({
+			pathname: "/"
+		  });
+	}
+    if (loading) return (
+        <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>
+    );
     if (error) return <p>Error :(</p>;
     return(
         <PokemonDetailWrap>
@@ -148,7 +159,8 @@ function PokemonDetail(props){
                         </div>
                     </div>
                     <div className="catch">
-                        <button className="catch-btn" onClick={handleCatch}>CATCH!!</button>
+                        <Button variant="danger" className="catchbtn" onClick={handleCatch}>CATCH!!</Button>
+                        <Button variant="outline-danger" className="findbtn" onClick={handleFind}>Explore More</Button>
                     </div>
                 </div>
             </section>
@@ -156,7 +168,7 @@ function PokemonDetail(props){
                 catchPoke === true ?
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Gotcha {data.pokemon.name} was caught, give the nickname below</Modal.Title>
+                        <Modal.Title>Gotcha!! {data.pokemon.name} was caught, give the nickname below</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                     <InputGroup className="mb-3">
@@ -186,8 +198,6 @@ function PokemonDetail(props){
                     <Modal.Body>
                         don't think about it, try again
                     </Modal.Body>
-                    <Modal.Footer> 
-                    </Modal.Footer>
                 </Modal>
                 :
                 null
